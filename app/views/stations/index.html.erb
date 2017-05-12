@@ -1,0 +1,53 @@
+<h1><%= link_to "Bixi Station Information", root_path %></h1>
+
+<%= form_tag "", method: :get do %>
+    <%= label_tag do %>
+        <%= radio_button_tag :with_bikes_filter, "yes", @with_bikes_filter %>
+        Display only stations with available bikes
+    <% end %>
+    <br>
+    <%= label_tag do %>
+        <%= radio_button_tag :with_bikes_filter, "no", !@with_bikes_filter %>
+        Display stations without available bikes
+    <% end %>
+    <br>
+    <%= label_tag do %>
+        <%= radio_button_tag :with_docks_filter, "yes", @with_docks_filter %>
+        Display only stations with available docks
+    <% end %>
+    <br>
+    <%= label_tag do %>
+        <%= radio_button_tag :with_docks_filter, "no", !@with_docks_filter %>
+        Display stations without available docks
+    <% end %>
+    <br>
+    Display stations within
+    <%= select_tag :distance_filter, options_for_select(valid_distances_options, @distance_filter) %>
+    <br>
+    <%= submit_tag "Refresh" %>
+<% end %>
+<hr>
+<table>
+  <tr>
+    <th>Station</th>
+    <th>Available Bikes</th>
+    <th>Available Docks</th>
+    <th>Distance</th>
+  </tr>
+  <% if @stations.empty? %>
+      <tr>
+        <td class="empty" colspan="4">
+          No station found.
+        </td>
+      </tr>
+  <% else %>
+      <% @stations.each do |sta| %>
+          <tr>
+            <td><%= sta.name %></td>
+            <td><%= sta.nb_bike %></td>
+            <td><%= sta.nb_empty_dock %></td>
+            <td><%= number_to_human(@fx_distances[sta.id], units: :distance) %></td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

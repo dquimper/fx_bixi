@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe StationsController, type: :controller do
 
+  it "routes" do
+    expect(get: '/stations').to route_to("stations#index")
+    expect(get: '/').to route_to("stations#index")
+  end
+
+
   let(:near) { Station.create(name: "near", latitude: 45.5060, longitude: -73.569, nb_bike: 1, nb_empty_dock: 1) }
   let(:far) { Station.create(name: "far", latitude: 45.49, longitude: -73.55, nb_bike: 1, nb_empty_dock: 1) }
   let(:no_bike) { Station.create(name: "no_bike", latitude: 45.5059, longitude: -73.569, nb_bike: 0, nb_empty_dock: 1) }

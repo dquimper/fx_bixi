@@ -1,0 +1,44 @@
+{
+    "schemeSuspended": false,
+    "stations": [
+        {
+            "b": false,
+            "ba": 12,
+            "bk": false,
+            "bl": false,
+            "bx": 0,
+            "da": 19,
+            "dx": 0,
+            "id": 1,
+            "la": 45.50931028555171,
+            "lc": 1494529147950,
+            "lo": -73.55443105101585,
+            "lu": 1494528186863,
+            "m": false,
+            "n": "6001",
+            "s": "H\u00f4tel-de-Ville 2 (du Champs-de-Mars / Gosford)",
+            "st": 1,
+            "su": false
+        },
+        {
+            "b": false,
+            "ba": 3,
+            "bk": false,
+            "bl": false,
+            "bx": 0,
+            "da": 20,
+            "dx": 0,
+            "id": 2,
+            "la": 45.53923029698213,
+            "lc": 1494529265130,
+            "lo": -73.54108236730099,
+            "lu": 1494526585606,
+            "m": false,
+            "n": "6002",
+            "s": "Ste-Catherine / D\u00e9z\u00e9ry",
+            "st": 1,
+            "su": false
+        }
+    ],
+    "timestamp": 1494529272433
+}
